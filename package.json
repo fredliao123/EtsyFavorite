@@ -1,0 +1,25 @@
+{
+  "name": "etsyfavorite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fredliao123/EtsyFavorite.git"
+  },
+  "dependencies": {
+    "fs-extra": "^10.1.0",
+    "log-to-file": "^3.0.3",
+    "puppeteer": "^13.6.0",
+    "random-number": "0.0.9"
+  },
+  "author": "Fred Liao",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fredliao123/EtsyFavorite/issues"
+  },
+  "homepage": "https://github.com/fredliao123/EtsyFavorite#readme"
+}
