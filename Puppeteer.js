@@ -10,7 +10,7 @@ module.exports = class Puppeteer {
 
     static async initialiseBrowser() {
         const browser = await PuppeteerLib.launch({
-            'headless': false,    // have window
+            'headless': true,    // have window
             executablePath: null,
             userDataDir: Constants.chromeUserDataDirectory,
             ignoreDefaultArgs: Constants.puppeteerDefaultArgs,

@@ -30,10 +30,30 @@ module.exports = {
     second: 1000,
     minute: 60 * 1000,
     hour: 60 * 1000, // TODO
-    totalFavorite: 15,
+    totalFavorite: 1, // TODO
     clickSleepTime: 1 * 1000,
     uploadSleepTime: 60 * 1000,
     publishSleepTime: 60 * 1000,
     navigateSleepTime: 10 * 1000,
-    navigationTimeout: 180 * 1000
+    navigationTimeout: 180 * 1000,
+    tenOption: {
+        min: 1,
+        max: 1,//TODO
+        integer: true
+    },
+    fiveOption: {
+        min: 1,
+        max: 5,
+        integer: true
+    },
+    hundredOption: {
+        min: 15,
+        max: 100,
+        integer: true
+    },
+    a64Option: {
+        min: 2,
+        max: 60,
+        integer: true
+    }
 }

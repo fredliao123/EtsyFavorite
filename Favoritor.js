@@ -1,20 +1,5 @@
 const Constants = require('./Constants')
 const randomNum = require('random-number')
-const tenOption = {
-    min: 1,
-    max: 2,//TODO
-    integer: true
-}
-const hundredOption = {
-    min: 15,
-    max: 100,
-    integer: true
-}
-const a64Option = {
-    min: 2,
-    max: 60,
-    integer: true
-}
 const log = require('log-to-file');
 
 module.exports = class Favoritor {
@@ -37,11 +22,13 @@ module.exports = class Favoritor {
             log("Random favorite button: " + randomFavoriteButton + " | Random favorite count: " + randomFavoriteCount)
             if(targetFavoriteButton != null && !isLastClickedTargetFavorite) {
                 await this.clickOnFavoriteButton(targetFavoriteButton, shopName)
+                log("Favorite: Favorite click shopName: " + shopName)
                 targetFavoriteCount = targetFavoriteCount + 1
                 isLastClickedTargetFavorite = true
-            } else if (randomFavoriteCount <= targetFavoriteButton) {
+            } else if (randomFavoriteCount <= targetFavoriteCount) {
                 await this.clickOnFavoriteButton(randomFavoriteButton, shopName)
-                randomFavoriteButton = randomFavoriteButton + 1
+                log("Favorite: Random shop click")
+                randomFavoriteCount = randomFavoriteCount + 1
                 isLastClickedTargetFavorite = false
             } 
             await this.goToNextPage()
@@ -88,10 +75,10 @@ module.exports = class Favoritor {
         let randomIndex
 
         while (regeneraterandomNum) {
-            randomIndex = randomNum(a64Option)
+            randomIndex = randomNum(Constants.a64Option)
             let randomName = this.getShopName(items[randomIndex])
             if (randomName == shopName || randomName == null) {
-                randomIndex = randomNum(a64Option)
+                randomIndex = randomNum(Constants.a64Option)
                 regeneraterandomNum = true
             } else {
                 regeneraterandomNum = false
@@ -126,8 +113,7 @@ module.exports = class Favoritor {
 
     async clickOnFavoriteButton(favoriteButton, shopName) {
         await favoriteButton.click()
-        log("Favorite: Favorite click shopName: " + shopName)
-        let sleepTime = randomNum(hundredOption) * Constants.second
+        let sleepTime = randomNum(Constants.hundredOption) * Constants.second
         log("Favorite: Favorite click sleep time: " + sleepTime)
         await this.puppeteer.sleep(sleepTime)
     }
@@ -139,7 +125,7 @@ module.exports = class Favoritor {
         await items[items.length - 1].click()
 
         await this.puppeteer.sleep(Constants.navigateSleepTime)
-        let sleepTime = randomNum(tenOption) * Constants.minute
+        let sleepTime = randomNum(Constants.tenOption) * Constants.minute
         log("Favorite: Next page sleep time: " + sleepTime)
         await this.puppeteer.sleep(sleepTime)
     }
