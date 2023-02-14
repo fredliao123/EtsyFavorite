@@ -5,13 +5,14 @@ const Constants = require('./Constants')
 const log = require('log-to-file')
 
 const searchKeywords = [
-    "Samsung Tv Art",
-    "frame tv art",
     "Samsung Tv Art Renoir",
     "Samsung Tv Art farmhouse",
     "Samsung Tv Art Monet",
     "Samsung Tv Art Van Gogh",
-    "Sailing tv art"
+    "Samsung Tv Art cityscape",
+    "Sailing tv art",
+    "Set of 3 Claude Monet Painting",
+    "Set of 3 Van Gogh Painting"
 ]
 
 const shopName = "SunbeamAvenueGallery"

@@ -11,7 +11,18 @@ module.exports = class Puppeteer {
 
     static async initialiseBrowser() {
         PuppeteerLib.use(StealthPlugin())
-        const browser = await PuppeteerLib.launch({headless: false})
+        const browser = await PuppeteerLib.launch({
+            'headless': false,    // have window
+            executablePath: null,
+            userDataDir: Constants.chromeUserDataDirectory,
+            ignoreDefaultArgs: Constants.puppeteerDefaultArgs,
+            autoClose: false,
+            defaultViewport: null,
+            args: ['--lang=en-US,en',
+                '--enable-audio-service-sandbox',
+                '--no-sandbox',
+            ],
+        })
         return browser
     }
 

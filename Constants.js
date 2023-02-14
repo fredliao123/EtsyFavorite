@@ -26,11 +26,11 @@ module.exports = {
         '--password-store=basic',
         '--use-mock-keychain',
     ],
-    chromeUserDataDirectory: "C:\\Users\\user\\AppData\\Local\\Chromium\\User Data",//TODO
+    chromeUserDataDirectory: "./UserData",
     second: 1000,
     minute: 60 * 1000,
     hour: 60 * 60 * 1000, 
-    totalFavorite: 25,
+    totalFavorite: 15,
     clickSleepTime: 10 * 1000,
     uploadSleepTime: 60 * 1000,
     publishSleepTime: 60 * 1000,
