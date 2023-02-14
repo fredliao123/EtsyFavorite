@@ -37,6 +37,7 @@ module.exports = class Favoritor {
     }
 
     async search(searchKeyWord) {
+        log("Searching keyword: " + searchKeyWord)
         let searchBox = await this.puppeteer.page.$('#global-enhancements-search-query')
         await searchBox.click({ clickCount: 3 })
         await searchBox.type(searchKeyWord)

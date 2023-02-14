@@ -13,7 +13,9 @@
   "dependencies": {
     "fs-extra": "^10.1.0",
     "log-to-file": "^3.0.3",
-    "puppeteer": "^13.6.0",
+    "puppeteer": "^13.7.0",
+    "puppeteer-extra": "^3.3.4",
+    "puppeteer-extra-plugin-stealth": "^2.11.1",
     "random-number": "0.0.9"
   },
   "author": "Fred Liao",

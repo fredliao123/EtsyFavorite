@@ -14,7 +14,7 @@ const searchKeywords = [
     "Sailing tv art"
 ]
 
-const shopName = "AlluringView"
+const shopName = "SunbeamAvenueGallery"
 
 run()
 

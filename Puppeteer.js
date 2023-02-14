@@ -1,4 +1,5 @@
-const PuppeteerLib = require('puppeteer')
+const PuppeteerLib = require('puppeteer-extra')
+const StealthPlugin = require('puppeteer-extra-plugin-stealth')
 const Constants = require('./Constants')
 
 module.exports = class Puppeteer {
@@ -9,18 +10,8 @@ module.exports = class Puppeteer {
     }
 
     static async initialiseBrowser() {
-        const browser = await PuppeteerLib.launch({
-            'headless': true,    // have window
-            executablePath: null,
-            userDataDir: Constants.chromeUserDataDirectory,
-            ignoreDefaultArgs: Constants.puppeteerDefaultArgs,
-            autoClose: false,
-            defaultViewport: null,
-            args: ['--lang=en-US,en',
-                '--enable-audio-service-sandbox',
-                '--no-sandbox',
-            ],
-        });
+        PuppeteerLib.use(StealthPlugin())
+        const browser = await PuppeteerLib.launch({headless: false})
         return browser
     }
 
@@ -45,5 +36,5 @@ module.exports = class Puppeteer {
         await this.page.close()
         await this.browser.close()
     }
-    
+
 }

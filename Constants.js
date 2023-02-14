@@ -26,19 +26,19 @@ module.exports = {
         '--password-store=basic',
         '--use-mock-keychain',
     ],
-    chromeUserDataDirectory: "C:\\Users\\user\\AppData\\Local\\Chromium\\User Data",
+    chromeUserDataDirectory: "C:\\Users\\user\\AppData\\Local\\Chromium\\User Data",//TODO
     second: 1000,
     minute: 60 * 1000,
-    hour: 60 * 1000, // TODO
-    totalFavorite: 1, // TODO
-    clickSleepTime: 1 * 1000,
+    hour: 60 * 60 * 1000, 
+    totalFavorite: 25,
+    clickSleepTime: 10 * 1000,
     uploadSleepTime: 60 * 1000,
     publishSleepTime: 60 * 1000,
-    navigateSleepTime: 10 * 1000,
+    navigateSleepTime: 60 * 1000,
     navigationTimeout: 180 * 1000,
     tenOption: {
         min: 1,
-        max: 1,//TODO
+        max: 10,
         integer: true
     },
     fiveOption: {
